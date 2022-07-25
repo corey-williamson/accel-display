@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Work Space Files
+.metadata/*
+AccelerometerDisplay/.settings/*
+
+AccelerometerDisplay/Debug/*
