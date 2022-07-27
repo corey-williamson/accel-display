@@ -102,7 +102,13 @@ int main(void)
   MX_SPI2_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
+  uint8_t test[4];
+  test[0] = 0xAA;
+  test[1] = 0x55;
+  test[2] = 0x11;
+  test[3] = 0x33;
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+  HAL_SPI_Transmit(&hspi2, test, sizeof(test), 1000);
   TIM4->CCR1 = 0;
   while(1);
   *DWT_CTRL |= (1<<0);  // Turn on cycle counting
